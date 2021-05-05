@@ -6,4 +6,5 @@ def no_c(my_string):
             pass
         else:
             new_list.append(my_string[i])
-    return(''.join(new_list))
+    new_string = ''.join(new_list)
+    return(new_string)
