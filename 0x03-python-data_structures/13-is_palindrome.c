@@ -24,13 +24,12 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 	k = i - 1;
-	for (j = 0; j < (i / 2); j++)
+	for (j = 0; j < (i / 2); j++, k--)
 	{
 		a = array[j];
 		b = array[k];
 		if (a != b)
 			len++;
-		k--;
 	}
 	if (len == 0)
 		return (1);
