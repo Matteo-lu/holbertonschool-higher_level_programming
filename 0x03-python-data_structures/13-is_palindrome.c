@@ -14,6 +14,8 @@ int is_palindrome(listint_t **head)
 	unsigned int i = 0, j = 0, k = 0, len = 0;
 	int array[10], *ptr1 = NULL, *ptr2 = NULL;
 
+	if (head == NULL)
+		return (1);
 	ptr = *head;
 	while (ptr != NULL)
 	{
