@@ -11,7 +11,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *ptr = NULL;
-	unsigned int i = 0, j = 0, k = 0, len = 0;
+	unsigned int i = 0, j = 0, len = 0;
 	int array[10], *ptr1 = NULL, *ptr2 = NULL;
 
 	if (head == NULL)
@@ -23,14 +23,14 @@ int is_palindrome(listint_t **head)
 		ptr = ptr->next;
 		i++;
 	}
-	k = i - 1;
-	while (j < (i / 2))
+	i = i - 1;
+	while (j < 5)
 	{
 		ptr1 = &array[j];
-		ptr2 = &array[k];
+		ptr2 = &array[i];
 		if (*ptr1 != *ptr2)
 			len++;
-		k--;
+		i--;
 		j++;
 	}
 	if (len == 0)
