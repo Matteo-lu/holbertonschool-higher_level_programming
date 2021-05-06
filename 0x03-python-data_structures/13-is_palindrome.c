@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *ptr = NULL;
 	unsigned int i = 0, j = 0, k = 0, len = 0;
-	int array[10], a, b;
+	int array[BUFSIZ], a, b;
 
 	if (*head == NULL)
 		return (1);
