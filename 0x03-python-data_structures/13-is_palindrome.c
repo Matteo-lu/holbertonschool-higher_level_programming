@@ -24,7 +24,7 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 	k = i - 1;
-	while (j < (k / 2))
+	while (j < (i / 2))
 	{
 		a = array[j];
 		b = array[k];
