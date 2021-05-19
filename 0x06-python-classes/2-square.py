@@ -5,7 +5,7 @@
 class Square:
     """Square class with corresponding methods"""
 
-    def __init__(self, size="0"):
+    def __init__(self, size=0):
         """Initializes the data."""
         self.__size = size
         if type(self.__size) is not int:
