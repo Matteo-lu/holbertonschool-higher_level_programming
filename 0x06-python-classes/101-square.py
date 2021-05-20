@@ -65,7 +65,7 @@ positive integers")
 
     def __str__(self):
         if self.__size != 0:
-            my_string = ("\n" * self.__position[1]) + ((("_" * self.__position[0]) + ("#" * self.size + '\n')) * (self.size - 1)) + (("_" * self.__position[0]) + ("#" * self.size))
+            my_string = ("\n" * self.__position[1]) + (((" " * self.__position[0]) + ("#" * self.size + '\n')) * (self.size - 1)) + ((" " * self.__position[0]) + ("#" * self.size))
             return my_string
         else:
             my_string = ""
