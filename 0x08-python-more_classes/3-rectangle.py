@@ -19,8 +19,11 @@ class Rectangle:
             return 0
 
     def __str__(self):
-        return ('#' * self.__width + '\n') * (self.__height - 1) +\
-                '#' * self.__width
+        if self.__width != 0 and self.__height != 0:
+            return ('#' * self.__width + '\n') * (self.__height - 1) +\
+                    '#' * self.__width
+        else:
+            return
 
     @property
     def height(self):
