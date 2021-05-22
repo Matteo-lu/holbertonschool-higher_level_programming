@@ -3,5 +3,5 @@
 
 
 class LockedClass:
-
+    """Locked class with corresponding methods"""
     __slots__ = ['first_name']
