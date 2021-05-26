@@ -1,0 +1,96 @@
+External tests associated with test/0-add_integer.py.
+
+# 0 - Module import
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# 1 - Positive integer test
+>>> add_integer(2, 3)
+5
+
+# 2 - Negative integer test
+>>> add_integer(-4, -3)
+-7
+
+# 3 - No arguments test
+>>> add_integer()
+Traceback (most recent call last):
+	...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+# 4 - String argument test
+>>> add_integer("h", 3)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# 5 - String argument test
+>>> add_integer(2, "h")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+# 6 - Float argument test
+>>> add_integer(2, 3.5)
+5
+
+# 7 - Float argument test
+>>> add_integer(2.5, 3)
+5
+
+# 8 - One argument only test
+>>> add_integer(3)
+101
+
+# 9 - String only test
+>>> add_integer("h")
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# 10 - Executable file test
+>>> import os
+>>> print(os.access("0-add_integer.py", os.X_OK))
+True
+
+# 11 - The file exist test
+>>> f = open("0-add_integer.py")
+>>> f.close()
+
+# 12 - Function documentation
+>>> import re
+>>> func_doc = (add_integer.__doc__)
+>>> len(func_doc.splitlines()) > 4
+True
+
+# 13 - New line test
+>>> with open("0-add_integer.py", "r") as file:
+...     for last_line in file:
+...             pass
+...     for new_line in last_line:
+...             pass
+...     if new_line == '\n':
+...             print(True)
+True
+
+# 14 - Shebang test
+>>> with open("0-add_integer.py", "r") as file:
+...		first_line = file.readline()
+...		if first_line.strip() == "#!/usr/bin/python3":
+...			print(True)
+True
+
+# 15 - pep8 style test
+>>> import os
+>>> os.popen("pep8 0-add_integer.py").read()
+''
+
+# 16 - Readme file test
+>>> import os
+>>> readme_file = os.getcwd() + '/README.md'
+>>> os.stat(readme_file).st_size != 0
+True
+
+# 17 - Module documentation
+>>> lines = (__import__("0-add_integer").__doc__).count('\n')
+>>> lines >= 5
+True

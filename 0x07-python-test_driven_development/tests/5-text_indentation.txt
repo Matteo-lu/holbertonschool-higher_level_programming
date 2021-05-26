@@ -1,0 +1,137 @@
+External tests associated with 5-text_indentation.py.
+
+# 0 - Module import
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# 1 - String test
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+Utrum igitur tibi litteram videor an totas paginas commovere?
+<BLANKLINE>
+Non autem hoc:
+<BLANKLINE>
+igitur ne illud quidem.
+<BLANKLINE>
+Fortasse id optimum, sed ubi illud:
+<BLANKLINE>
+Plus semper voluptatis?
+<BLANKLINE>
+Teneo, inquit, finem illi videri nihil dolere.
+<BLANKLINE>
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+<BLANKLINE>
+Si id dicis, vicimus.
+<BLANKLINE>
+Inde sermone vario sex illa a Dipylo stadia confecimus.
+<BLANKLINE>
+Sin aliud quid voles, postea.
+<BLANKLINE>
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+<BLANKLINE>
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+# 2 - Short string test
+>>> text_indentation("Every step takes me higher")
+Every step takes me higher
+
+# 3 - Word string test
+>>> text_indentation("Every.")
+Every.
+<BLANKLINE>
+
+# 4 - Character test
+>>> text_indentation('?')
+?
+<BLANKLINE>
+
+# 5 - Character test
+>>> text_indentation('h')
+h
+
+# 6 - Separators characters test
+>>> text_indentation(".:?")
+.
+<BLANKLINE>
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+# 7 - No string type test
+>>> text_indentation(27)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+# 8 - Multi-whitespace character test
+>>> text_indentation("    Every step:     takes me higher")
+Every step:
+<BLANKLINE>
+takes me higher
+
+# 9 - Multi-whitespace character  with separator character test
+>>> text_indentation("    Every step:     takes me higher.")
+Every step:
+<BLANKLINE>
+takes me higher.
+<BLANKLINE>
+
+# 10 - Empty string test
+>>> text_indentation("")
+
+# 11 - No arguments test
+>>> text_indentation()
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+# 12 - Executable file test
+>>> import os
+>>> print(os.access("5-text_indentation.py", os.X_OK))
+True
+
+# 13 - The file exist test
+>>> f = open("5-text_indentation.py")
+>>> f.close()
+
+# 14 - Function documentation
+>>> import re
+>>> func_doc = (text_indentation.__doc__)
+>>> len(func_doc.splitlines()) > 4
+True
+
+# 15 - New line test
+>>> with open("5-text_indentation.py", "r") as file:
+...     for last_line in file:
+...             pass
+...     for new_line in last_line:
+...             pass
+...     if new_line == '\n':
+...             print(True)
+True
+
+# 16 - Shebang test
+>>> with open("5-text_indentation.py", "r") as file:
+...		first_line = file.readline()
+...		if first_line.strip() == "#!/usr/bin/python3":
+...			print(True)
+True
+
+# 17 - pep8 style test
+>>> import os
+>>> os.popen("pep8 5-text_indentation.py").read()
+''
+
+# 18 - Readme file test
+>>> import os
+>>> readme_file = os.getcwd() + '/README.md'
+>>> os.stat(readme_file).st_size != 0
+True
+
+# 19 - Module documentation
+>>> lines = (__import__("5-text_indentation").__doc__).count('\n')
+>>> lines >= 5
+True

@@ -1,0 +1,103 @@
+External tests associated with 2-matrix_divided.py.
+
+# 0 - Module import
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# 1 - Matrix of integer lists test
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# 2 - Matrix by Float divisor test
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3.5)
+[[0.29, 0.57, 0.86], [1.14, 1.43, 1.71]]
+
+# 3 - Matrix of Float lists test
+>>> matrix_divided([[1.1, 2.2, 3.3], [4.4, 5.5, 6.6]], 3)
+[[0.37, 0.73, 1.1], [1.47, 1.83, 2.2]]
+
+# 4 - Matrix by zero divisor test
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+Traceback (most recent call last):
+	...
+ZeroDivisionError: division by zero
+
+# 5 - Matrix without divisor
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+Traceback (most recent call last):
+	...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+# 6 - Martix empty test
+>>> matrix_divided([[]], 3)
+[[]]
+
+# 7 - Martix empty test
+>>> matrix_divided([], 3)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# 8 - First argument string test
+>>> matrix_divided("[1,2]", 3)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# 9 - Second argument string test
+>>> matrix_divided([1,2], "3")
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# 10 - Passing no arguments test
+Traceback (most recent call last):
+	...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+# 11 - Executable file test
+>>> import os
+>>> print(os.access("2-matrix_divided.py", os.X_OK))
+True
+
+# 12 - The file exist test
+>>> f = open("2-matrix_divided.py")
+>>> f.close()
+
+# 13 - Function documentation
+>>> import re
+>>> func_doc = (matrix_divided.__doc__)
+>>> len(func_doc.splitlines()) > 4
+True
+
+# 14 - New line test
+>>> with open("2-matrix_divided.py", "r") as file:
+...     for last_line in file:
+...             pass
+...     for new_line in last_line:
+...             pass
+...     if new_line == '\n':
+...             print(True)
+True
+
+# 15 - Shebang test
+>>> with open("2-matrix_divided.py", "r") as file:
+...		first_line = file.readline()
+...		if first_line.strip() == "#!/usr/bin/python3":
+...			print(True)
+True
+
+# 16 - pep8 style test
+>>> import os
+>>> os.popen("pep8 2-matrix_divided.py").read()
+''
+
+# 17 - Readme file test
+>>> import os
+>>> readme_file = os.getcwd() + '/README.md'
+>>> os.stat(readme_file).st_size != 0
+True
+
+# 18 - Module documentation
+>>> lines = (__import__("2-matrix_divided").__doc__).count('\n')
+>>> lines >= 5
+True

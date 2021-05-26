@@ -1,0 +1,113 @@
+External tests associated with 4-print_square.py.
+
+# 0 - Module import
+>>> print_square = __import__('4-print_square').print_square
+
+# 1 - integer test
+>>> print_square(4)
+####
+####
+####
+####
+
+# 2 - Positive integer test
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# 3 - Negative integer test
+>>> print_square(-5)
+Traceback (most recent call last):
+	...
+ValueError: size must be >= 0
+
+# 4 - Positive float test
+>>> print_square(5.5)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+# 5 - Negative float test
+>>> print_square(-5.5)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+# 6 - No arguments test
+>>> print_square()
+Traceback (most recent call last):
+	...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+# 7 - Argument 0 test
+>>> print_square(0)
+
+# 8 - String argument test
+>>> print_square("5")
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+# 9 - add of arguments test
+>>> print_square(4 + 1)
+#####
+#####
+#####
+#####
+#####
+
+# 10 - Executable file test
+>>> import os
+>>> print(os.access("4-print_square.py", os.X_OK))
+True
+
+# 11 - The file exist test
+>>> f = open("4-print_square.py")
+>>> f.close()
+
+# 12 - Function documentation
+>>> import re
+>>> func_doc = (print_square.__doc__)
+>>> len(func_doc.splitlines()) > 4
+True
+
+# 13 - New line test
+>>> with open("4-print_square.py", "r") as file:
+...     for last_line in file:
+...             pass
+...     for new_line in last_line:
+...             pass
+...     if new_line == '\n':
+...             print(True)
+True
+
+# 14 - Shebang test
+>>> with open("4-print_square.py", "r") as file:
+...		first_line = file.readline()
+...		if first_line.strip() == "#!/usr/bin/python3":
+...			print(True)
+True
+
+# 15 - pep8 style test
+>>> import os
+>>> os.popen("pep8 4-print_square.py").read()
+''
+
+# 16 - Readme file test
+>>> import os
+>>> readme_file = os.getcwd() + '/README.md'
+>>> os.stat(readme_file).st_size != 0
+True
+
+# 17 - Module documentation
+>>> lines = (__import__("4-print_square").__doc__).count('\n')
+>>> lines >= 5
+True
