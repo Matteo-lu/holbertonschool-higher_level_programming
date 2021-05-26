@@ -106,8 +106,7 @@ True
 >>> matrix_divided([[3, "9"], [12, 3]], 2)
 Traceback (most recent call last):
 	...
-TypeError: matrix must be a matrix (list of lists) \
-of integers/floats
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 # 20 - String test
 >>> matrix_divided([[3, 9], [12, 3]], "2")
