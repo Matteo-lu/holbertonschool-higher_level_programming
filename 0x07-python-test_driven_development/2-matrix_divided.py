@@ -24,6 +24,12 @@ def matrix_divided(matrix, div):
         raise TypeError("matrix must be a matrix (list of lists) \
 of integers/floats")
 
+    for idx in matrix:
+        for index in idx:
+            if type(index) not in [int, float]:
+                raise TypeError("matrix must be a matrix (list of lists) \
+of integers/floats")
+
     for count in range(len(matrix) - 1):
         if len(matrix[count]) != len(matrix[count + 1]):
             raise TypeError("Each row of the matrix must have the same size")
@@ -42,3 +48,17 @@ of integers/floats")
             temp.append(round(result, 2))
         new_matrix.append(temp)
     return new_matrix
+
+try:
+    matrix = [[3, "9"], [12, 3]]
+    print(matrix_divided(matrix, 2))
+    print(matrix)
+except Exception as e:
+    print(e)
+
+try:
+    matrix = [[3, 9], [12, 3]]
+    print(matrix_divided(matrix, "2"))
+    print(matrix)
+except Exception as e:
+    print(e)
