@@ -101,3 +101,15 @@ True
 >>> lines = (__import__("2-matrix_divided").__doc__).count('\n')
 >>> lines >= 5
 True
+
+# 19 - String test
+>>> matrix_divided([[3, "9"], [12, 3]], 2)
+Traceback (most recent call last):
+	...
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+# 20 - String test
+>>> matrix_divided([[3, 9], [12, 3]], "2")
+Traceback (most recent call last):
+	...
+TypeError: div must be a number
