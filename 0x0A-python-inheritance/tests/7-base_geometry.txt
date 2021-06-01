@@ -1,0 +1,96 @@
+External tests associated with 1-my_list.py.
+
+# 0 - Module import
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# 1 - Expected test
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+
+
+# 2 - Expected test
+>>> bg.integer_validator("width", 89)
+
+# 3 - string value test
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
+
+# 4 - Zero value test
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+	...
+ValueError: age must be greater than 0
+
+# 5 - Negative value test
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+	...
+ValueError: distance must be greater than 0
+
+# 6 - Float value test
+>>> bg.integer_validator("distance", 0.7)
+Traceback (most recent call last):
+	...
+TypeError: distance must be an integer
+
+# 6 - One argument test
+>>> bg.integer_validator("distance")
+Traceback (most recent call last):
+	...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+# 7 - No arguments
+>>> bg.integer_validator()
+Traceback (most recent call last):
+	...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# 8 - Executable file test
+>>> import os
+>>> print(os.access("7-base_geometry.py", os.X_OK))
+True
+
+# 9 - The file exist test
+>>> f = open("7-base_geometry.py")
+>>> f.close()
+
+# 10 - Function documentation
+>>> import re
+>>> func_doc = (BaseGeometry.__doc__)
+>>> len(func_doc.splitlines()) > 4
+True
+
+# 11 - New line test
+>>> with open("7-base_geometry.py", "r") as file:
+...     for last_line in file:
+...             pass
+...     for new_line in last_line:
+...             pass
+...     if new_line == '\n':
+...             print(True)
+True
+
+# 12 - Shebang test
+>>> with open("7-base_geometry.py", "r") as file:
+...		first_line = file.readline()
+...		if first_line.strip() == "#!/usr/bin/python3":
+...			print(True)
+True
+
+# 17 - pep8 style test
+>>> import os
+>>> os.popen("7-base_geometry.py").read()
+''
+
+# 18 - Readme file test
+>>> import os
+>>> readme_file = os.getcwd() + '/README.md'
+>>> os.stat(readme_file).st_size != 0
+True
+
+# 19 - Module documentation
+>>> lines = (__import__("7-base_geometry").__doc__).count('\n')
+>>> lines >= 5
+True
