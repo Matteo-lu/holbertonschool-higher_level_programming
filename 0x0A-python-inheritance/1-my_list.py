@@ -24,8 +24,4 @@ class MyList(list):
         MyList class to add functionality to built-in list
         """
 
-        list_s = []
-        for element in self:
-            list_s.append(element)
-        list_s.sort()
-        print(list_s)
+        print(sorted(self))
