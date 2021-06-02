@@ -8,44 +8,7 @@ BaseGeometry class.
 """
 
 
-class BaseGeometry:
-    """BaseGeometry without attributes
-
-    Args:
-        None
-
-    Attributes:
-        None
-
-    """
-
-    def area(self):
-        """area method.
-
-        Args:
-            None
-
-        Returns:
-            Exception
-
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """integer_validator method.
-
-        Args:
-            name(str): argument 1
-            value(int): argument 2
-
-        Returns:
-            Exception
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """Rectangle that inherits from BaseGeometry
@@ -68,7 +31,7 @@ class Rectangle(BaseGeometry):
         Returns:
             None
         """
-        self.integer_validator("width", width)
-        self.__width = width
-        self.integer_validator("height", height)
         self.__height = height
+        self.__width = width
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
