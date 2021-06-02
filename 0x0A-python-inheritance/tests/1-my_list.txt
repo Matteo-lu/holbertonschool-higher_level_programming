@@ -58,7 +58,7 @@ True
 # 10 - Function documentation
 >>> import re
 >>> func_doc = (MyList.__doc__)
->>> len(func_doc.splitlines()) > 4
+>>> len(func_doc.splitlines()) > 2
 True
 
 # 11 - New line test
