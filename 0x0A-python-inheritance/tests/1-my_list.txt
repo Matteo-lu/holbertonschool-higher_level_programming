@@ -48,29 +48,11 @@ Traceback (most recent call last):
 	...
 TypeError: append() takes exactly one argument (0 given)
 
-# 8 - Executable file test
->>> import os
->>> print(os.access("1-my_list.py", os.X_OK))
-True
-
-# 9 - The file exist test
->>> f = open("1-my_list.py")
->>> f.close()
 
 # 10 - Function documentation
 >>> import re
 >>> func_doc = (MyList.__doc__)
 >>> len(func_doc.splitlines()) > 2
-True
-
-# 11 - New line test
->>> with open("1-my_list.py", "r") as file:
-...     for last_line in file:
-...             pass
-...     for new_line in last_line:
-...             pass
-...     if new_line == '\n':
-...             print(True)
 True
 
 # 12 - Shebang test
@@ -85,13 +67,7 @@ True
 >>> os.popen("1-my_list.py").read()
 ''
 
-# 18 - Readme file test
->>> import os
->>> readme_file = os.getcwd() + '/README.md'
->>> os.stat(readme_file).st_size != 0
-True
-
 # 19 - Module documentation
 >>> lines = (__import__("1-my_list").__doc__).count('\n')
->>> lines >= 5
+>>> lines > 4
 True
