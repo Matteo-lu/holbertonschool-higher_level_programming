@@ -20,7 +20,9 @@ class MyList(list):
     """
 
     def print_sorted(self):
-        """print sorted list method"""
+        """
+        MyList class to add functionality to built-in list
+        """
 
         list_s = []
         for element in self:
