@@ -68,6 +68,6 @@ True
 ''
 
 # 19 - Module documentation
->>> lines = (__import__("1-my_list").__doc__).count('\n')
->>> lines > 4
+>>> lines = __import__("1-my_list").MyList.__doc__
+>>> len(lines) > 4
 True
