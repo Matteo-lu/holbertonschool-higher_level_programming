@@ -17,18 +17,23 @@ External tests associated with 1-my_list.py.
 >>> my_list.print_sorted()
 [-5, 1, 2, 3, 4]
 
-# 3 - Append high number to list of integer
+# 5 - Append high number to list of integer
 >>> my_list.append(123524)
 >>> my_list.print_sorted()
 [-5, 1, 2, 3, 4, 123524]
 
-# 4 - Append two arguments
+# 4 - print check
+>>> print(my_list)
+[1, 4, 2, 3, -5, 123524]
+
+
+# 6 - Append two arguments
 >>> my_list.append(1, 4)
 Traceback (most recent call last):
 	...
 TypeError: append() takes exactly one argument (2 given)
 
-# 5 - Float number
+# 7 - Float number
 >>> my_list.append(5.2)
 >>> my_list.print_sorted()
 [-5, 1, 2, 3, 4, 5.2, 123524]
