@@ -15,5 +15,4 @@ def lookup(obj):
     MyList class to add functionality to built-in list
     """
 
-    meth_at_obj = []
-    return dir(meth_at_obj)
+    return dir(obj)
