@@ -10,6 +10,10 @@ External tests associated with 1-my_list.py.
 >>> my_list.append(2)
 >>> my_list.append(3)
 
+# 4 - print check
+>>> print(my_list)
+[1, 4, 2, 3]
+
 # 2 - Append to list negative integer test
 >>> my_list.append(-5)
 
@@ -37,13 +41,6 @@ TypeError: append() takes exactly one argument (2 given)
 >>> my_list.append(5.2)
 >>> my_list.print_sorted()
 [-5, 1, 2, 3, 4, 5.2, 123524]
-
-# 6 - string append
->>> my_list.append("str")
->>> my_list.print_sorted()
-Traceback (most recent call last):
-	...
-TypeError: '<' not supported between instances of 'str' and 'int'
 
 # 7 - No arguments
 >>> my_list.append()
