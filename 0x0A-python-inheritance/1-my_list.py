@@ -9,19 +9,11 @@ MyList class that add print functionality to built-in list class.
 
 
 class MyList(list):
-    """MyList class to add functionality to built-in list
-
-    Args:
-        None
-
-    Attributes:
-        None
-
+    """
+    MyList class to add functionality to built-in list
     """
 
     def print_sorted(self):
-        """
-        MyList class to add functionality to built-in list
-        """
+        """MyList class to add functionality to built-in list"""
 
         print(sorted(self))
