@@ -13,12 +13,11 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-
+        count = 0
+        new_dic = {}
         if type(attrs) is list:
-            count = 0
             for element in attrs:
                 if type(element) is str:
-                    new_dic = {}
                     dic = self.__dict__
                     for element in attrs:
                         for key, value in dic.items():
