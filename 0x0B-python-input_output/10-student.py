@@ -25,6 +25,8 @@ class Student:
                             if key == element:
                                 new_dic[key] = value
                                 count += 1
+                else:
+                    return self.__dict__
             if count > 0:
                 return new_dic
             else:
