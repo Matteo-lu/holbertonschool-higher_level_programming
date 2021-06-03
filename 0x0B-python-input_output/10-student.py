@@ -19,10 +19,15 @@ class Student:
                 if type(element) is str:
                     new_dic = {}
                     dic = self.__dict__
+                    count = 0
                     for element in attrs:
                         for key, value in dic.items():
                             if key == element:
                                 new_dic[key] = value
-            return new_dic
+                                count += 1
+            if count > 0:
+                return new_dic
+            else:
+                return self.__dict__
         else:
             return self.__dict__
