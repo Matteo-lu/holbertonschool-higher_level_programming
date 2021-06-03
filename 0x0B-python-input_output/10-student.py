@@ -15,11 +15,11 @@ class Student:
     def to_json(self, attrs=None):
 
         if type(attrs) is list:
+            count = 0
             for element in attrs:
                 if type(element) is str:
                     new_dic = {}
                     dic = self.__dict__
-                    count = 0
                     for element in attrs:
                         for key, value in dic.items():
                             if key == element:
