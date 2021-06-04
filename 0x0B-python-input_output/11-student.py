@@ -31,7 +31,7 @@ class Student:
             else:
                 return self.__dict__
         else:
-            return self.__dict__
+            return new_dic
 
     def reload_from_json(self, json):
         self.__dict__ = json
