@@ -121,7 +121,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(str(r4), "[Rectangle] (3) 0/0 - 3/2")
         self.assertEqual(str(r5), "[Rectangle] (4) 17/18 - 15/16")
 
-        """Testing update method"""
+        """Testing args update method"""
         r1.update()
         self.assertEqual(r1.id, 1)
         self.assertEqual(r1.width, 10)
@@ -144,6 +144,36 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(r1.height, 3)
         self.assertEqual(r1.x, 4)
         self.assertEqual(r1.y, 5)
+
+        """Testing kwargs update method"""
+        r1 = Rectangle(10, 10, 10, 10)
+
+        r1.update()
+        self.assertEqual(r1.id, 5)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+        self.assertEqual(r1.height, 10)
+        r1.update(height=1)
+        self.assertEqual(r1.height, 1)
+        r1.update(width=1, x=2)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.x, 2)
+        r1.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 1)
+        r1.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(r1.height, 2)
+
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(1, height=2, y=3, width=4)
+        self.assertEqual(r1.id, 1)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+        self.assertEqual(r1.height, 10)
 
     def test_setter_exceptions(self):
         """

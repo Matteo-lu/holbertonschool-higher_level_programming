@@ -129,15 +129,29 @@ class Rectangle(Base):
             '/' + str(self.__y) + ' - ' + str(self.__width) +\
             '/' + str(self.__height)
 
-    def update(self, *args):
-        """Assigns an argument to each attribute"""
-        if len(args) >= 1:
-            super().__init__(args[0])
-        if len(args) >= 2:
-            self.__width = args[1]
-        if len(args) >= 3:
-            self.__height = args[2]
-        if len(args) >= 4:
-            self.__x = args[3]
-        if len(args) >= 5:
-            self.__y = args[4]
+    def update(self, *args, **kwargs):
+        """Assigns an argument to each attribute
+        and assigns a key/value argument to attributes"""
+        if args and len(args) > 0:
+            if len(args) >= 1:
+                super().__init__(args[0])
+            if len(args) >= 2:
+                self.__width = args[1]
+            if len(args) >= 3:
+                self.__height = args[2]
+            if len(args) >= 4:
+                self.__x = args[3]
+            if len(args) >= 5:
+                self.__y = args[4]
+        else:
+            for key in kwargs.keys():
+                if key == 'width':
+                    self.__width = kwargs[key]
+                if key == 'height':
+                    self.__height = kwargs[key]
+                if key == 'x':
+                    self.__x = kwargs[key]
+                if key == 'y':
+                    self.__y = kwargs[key]
+                if key == 'id':
+                    super().__init__(kwargs[key])
