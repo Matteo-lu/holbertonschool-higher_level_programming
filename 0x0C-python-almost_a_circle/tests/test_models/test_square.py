@@ -83,9 +83,9 @@ class TestRectangleClass(unittest.TestCase):
         s3 = Square(3, 1, 3)
 
         """Testing arguments"""
-        self.assertEqual(s1.id, 1)
-        self.assertEqual(s2.id, 2)
-        self.assertEqual(s3.id, 3)
+        self.assertEqual(s1.id, 22)
+        self.assertEqual(s2.id, 23)
+        self.assertEqual(s3.id, 24)
         self.assertEqual(s3.size, 3)
         self.assertEqual(s3.x, 1)
         self.assertEqual(s3.y, 3)
@@ -96,13 +96,13 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(s3.area(), 9)
 
         """Testing __str__ method"""
-        self.assertEqual(str(s1), "[Square] (1) 0/0 - 5")
-        self.assertEqual(str(s2), "[Square] (2) 2/0 - 2")
-        self.assertEqual(str(s3), "[Square] (3) 1/3 - 3")
+        self.assertEqual(str(s1), "[Square] (22) 0/0 - 5")
+        self.assertEqual(str(s2), "[Square] (23) 2/0 - 2")
+        self.assertEqual(str(s3), "[Square] (24) 1/3 - 3")
 
         """Testing args update method"""
         s1.update()
-        self.assertEqual(s1.id, 1)
+        self.assertEqual(s1.id, 22)
         self.assertEqual(s1.width, 5)
         self.assertEqual(s1.height, 5)
         self.assertEqual(s1.x, 0)
@@ -176,11 +176,11 @@ class TestRectangleClass(unittest.TestCase):
         self.assertFalse((s1 == s2))
 
         s1 = Square(10)
-        self.assertEqual(s1.to_dictionary(), {'id': 5, 'size': 10, 'x': 0, 'y': 0})
+        self.assertEqual(s1.to_dictionary(), {'id': 26, 'size': 10, 'x': 0, 'y': 0})
         r2 = Square(10, 2)
-        self.assertEqual(r2.to_dictionary(), {'id': 6, 'size': 10, 'x': 2, 'y': 0})
+        self.assertEqual(r2.to_dictionary(), {'id': 27, 'size': 10, 'x': 2, 'y': 0})
         r2 = Square(10, 2, 15)
-        self.assertEqual(r2.to_dictionary(), {'id': 7, 'size': 10, 'x': 2, 'y': 15})
+        self.assertEqual(r2.to_dictionary(), {'id': 28, 'size': 10, 'x': 2, 'y': 15})
 
     def test_setter_exceptions(self):
         """
