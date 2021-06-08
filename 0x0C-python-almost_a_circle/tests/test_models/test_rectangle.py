@@ -11,13 +11,13 @@ class TestRectangleClass(unittest.TestCase):
     """Test class to test Rectangle class"""
 
     @classmethod
-    def setUpClass(self):"""
+    def setUpClass(self):
+        """
         setUp class to import modules
 
         Args:
             None
         """
-
 
     def setUp(self):
         """

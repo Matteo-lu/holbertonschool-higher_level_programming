@@ -11,13 +11,13 @@ class TestBaseClass(unittest.TestCase):
     """Test class to test Base class"""
 
     @classmethod
-    def setUpClass(self):"""
+    def setUpClass(self):
+        """
         setUp class to import modules
 
         Args:
             None
         """
-
 
     def setUp(self):
         """
