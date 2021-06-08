@@ -100,6 +100,88 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(str(s2), "[Square] (2) 2/0 - 2")
         self.assertEqual(str(s3), "[Square] (3) 1/3 - 3")
 
+        """Testing args update method"""
+        s1.update()
+        self.assertEqual(s1.id, 1)
+        self.assertEqual(s1.width, 5)
+        self.assertEqual(s1.height, 5)
+        self.assertEqual(s1.x, 0)
+        self.assertEqual(s1.y, 0)
+        s1.update(89)
+        self.assertEqual(s1.id, 89)
+        s1.update(89, 2)
+        self.assertEqual(s1.width, 2)
+        s1.update(89, 2, 3)
+        self.assertEqual(s1.height, 2)
+        self.assertEqual(s1.height, 2)
+        self.assertEqual(s1.x, 3)
+        self.assertEqual(s1.y, 0)
+        s1.update(89, 2, 3, 4)
+        self.assertEqual(s1.y, 4)
+        s1.update(89, 2, 3, 4, 5, 8, 13)
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.width, 2)
+        self.assertEqual(s1.height, 2)
+        self.assertEqual(s1.x, 3)
+        self.assertEqual(s1.y, 4)
+
+        """Testing kwargs update method"""
+        s1 = Square(10, 10, 10, 10)
+
+        s1.update()
+        self.assertEqual(s1.id, 10)
+        self.assertEqual(s1.width, 10)
+        self.assertEqual(s1.x, 10)
+        self.assertEqual(s1.y, 10)
+        self.assertEqual(s1.height, 10)
+        s1.update(size=1)
+        self.assertEqual(s1.height, 1)
+        self.assertEqual(s1.width, 1)
+        self.assertEqual(s1.size, 1)
+        s1.update(size=1, x=2)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        s1.update(y=1, size=2, x=3, id=89)
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 2)
+        self.assertEqual(s1.height, 2)
+        self.assertEqual(s1.width, 2)
+        self.assertEqual(s1.x, 3)
+        self.assertEqual(s1.y, 1)
+
+        s1 = Square(10, 10, 10, 10)
+        s1.update(1, size=2, y=3, id=4)
+        self.assertEqual(s1.id, 1)
+        self.assertEqual(s1.width, 10)
+        self.assertEqual(s1.x, 10)
+        self.assertEqual(s1.y, 10)
+        self.assertEqual(s1.height, 10)
+
+    def test_dict(self):
+        """
+        test dict object
+
+        Args:
+            None
+        """
+        s1 = Square(10, 2, 1, 1)
+        self.assertEqual(s1.to_dictionary(), {'id': 1, 'size': 10, 'x': 2, 'y': 1})
+        self.assertEqual(type(s1.to_dictionary()), dict)
+        s2 = Square(1, 1)
+        s2.update(**s1.to_dictionary())
+        self.assertEqual(s2.id, 1)
+        self.assertEqual(s2.size, 10)
+        self.assertEqual(s2.x, 2)
+        self.assertEqual(s2.y, 1)
+        self.assertFalse((s1 == s2))
+
+        s1 = Square(10)
+        self.assertEqual(s1.to_dictionary(), {'id': 5, 'size': 10, 'x': 0, 'y': 0})
+        r2 = Square(10, 2)
+        self.assertEqual(r2.to_dictionary(), {'id': 6, 'size': 10, 'x': 2, 'y': 0})
+        r2 = Square(10, 2, 15)
+        self.assertEqual(r2.to_dictionary(), {'id': 7, 'size': 10, 'x': 2, 'y': 15})
+
     def test_setter_exceptions(self):
         """
         test setter exceptions for Square class
