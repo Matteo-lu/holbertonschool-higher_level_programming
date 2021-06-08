@@ -82,9 +82,9 @@ class Base:
             json_string (str): string representing a list of dictionaries
         """
         if cls.__name__ == 'Rectangle':
-            dummy = cls(1, 1, 1, 1, 1)
+            dummy = cls(1, 1)
         else:
-            dummy = cls(1, 1, 1, 1)
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
 
