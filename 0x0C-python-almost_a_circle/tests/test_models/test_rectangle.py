@@ -175,6 +175,32 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(r1.y, 10)
         self.assertEqual(r1.height, 10)
 
+    def test_dict(self):
+        """
+        test dict object
+
+        Args:
+            None
+        """
+        r1 = Rectangle(10, 2, 1, 9, 1)
+        self.assertEqual(r1.to_dictionary(), {'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
+        self.assertEqual(type(r1.to_dictionary()), dict)
+        r2 = Rectangle(1, 1)
+        r2.update(**r1.to_dictionary())
+        self.assertEqual(r2.id, 1)
+        self.assertEqual(r2.width, 10)
+        self.assertEqual(r2.height, 2)
+        self.assertEqual(r2.x, 1)
+        self.assertEqual(r2.y, 9)
+        self.assertFalse((r1 == r2))
+
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.to_dictionary(), {'id': 8, 'width': 10, 'height': 2, 'x': 0, 'y': 0})
+        r2 = Rectangle(10, 2, 15)
+        self.assertEqual(r2.to_dictionary(), {'id': 9, 'width': 10, 'height': 2, 'x': 15, 'y': 0})
+        r2 = Rectangle(10, 2, 15, 2)
+        self.assertEqual(r2.to_dictionary(), {'id': 10, 'width': 10, 'height': 2, 'x': 15, 'y': 2})
+
     def test_setter_exceptions(self):
         """
         test setter exceptions for rectangle class

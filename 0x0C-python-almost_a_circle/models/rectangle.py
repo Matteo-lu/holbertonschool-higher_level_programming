@@ -20,7 +20,6 @@ class Rectangle(Base):
     Attributes:
         None
     """
-
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Constructor method
@@ -134,7 +133,7 @@ class Rectangle(Base):
         and assigns a key/value argument to attributes"""
         if args and len(args) > 0:
             if len(args) >= 1:
-                super().__init__(args[0])
+                self.id = (args[0])
             if len(args) >= 2:
                 self.__width = args[1]
             if len(args) >= 3:
@@ -144,6 +143,7 @@ class Rectangle(Base):
             if len(args) >= 5:
                 self.__y = args[4]
         else:
+            print(kwargs)
             for key in kwargs.keys():
                 if key == 'width':
                     self.__width = kwargs[key]
@@ -154,4 +154,12 @@ class Rectangle(Base):
                 if key == 'y':
                     self.__y = kwargs[key]
                 if key == 'id':
-                    super().__init__(kwargs[key])
+                    self.id = (kwargs[key])
+
+    def to_dictionary(self):
+        """ returns the dictionary representation of a Rectangle"""
+        new_dict = dict([('id', self.id),
+                        ('width', self.__width),
+                        ('height', self.__height),
+                        ('x', self.__x), ('y', self.__y)])
+        return new_dict
