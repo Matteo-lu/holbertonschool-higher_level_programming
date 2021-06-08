@@ -143,7 +143,6 @@ class Rectangle(Base):
             if len(args) >= 5:
                 self.__y = args[4]
         else:
-            print(kwargs)
             for key in kwargs.keys():
                 if key == 'width':
                     self.__width = kwargs[key]
