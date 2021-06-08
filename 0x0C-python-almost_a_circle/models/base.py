@@ -70,12 +70,17 @@ class Base:
             json_string (str): string representing a list of dictionaries
         """
         if json_string is None or len(json_string) == 0:
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """writes the JSON string representation of list_objs to a file
+
+        Args:
+            json_string (str): string representing a list of dictionaries
+        """
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1, 1, 1, 1)
         else:
@@ -85,6 +90,11 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """writes the JSON string representation of list_objs to a file
+
+        Args:
+            json_string (str): string representing a list of dictionaries
+        """
         my_list = []
         try:
             with open(cls.__name__ + '.json', mode='r', encoding='utf-8') as f:
