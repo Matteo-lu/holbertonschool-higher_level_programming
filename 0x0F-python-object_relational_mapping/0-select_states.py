@@ -13,7 +13,7 @@ username = args_list[1]
 password = args_list[2]
 database_name = args_list[3]
 
-db = MySQLdb.connect("localhost", username, password, database_name)
+db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database_name)
 
 cursor = db.cursor()
 
