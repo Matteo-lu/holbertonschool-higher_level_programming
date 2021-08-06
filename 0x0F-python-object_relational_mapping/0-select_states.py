@@ -33,3 +33,6 @@ except:
    print ("Error: unable to fecth data")
 
 db.close()
+
+if __name__ == "__main__":
+    main()
