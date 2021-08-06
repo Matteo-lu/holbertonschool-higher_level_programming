@@ -19,7 +19,8 @@ cursor = db.cursor()
 
 cursor.execute("SELECT VERSION()")
 
-sql = "SELECT * FROM states"
+sql = "SELECT * FROM states \
+      ORDER BY id ASC"
 
 try:
    # Execute the SQL command
