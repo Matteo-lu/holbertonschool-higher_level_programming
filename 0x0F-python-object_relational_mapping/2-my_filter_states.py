@@ -31,9 +31,9 @@ if __name__ == "__main__":
     cursor.execute("SELECT VERSION()")
 
     try:
-        cursor.execute("SELECT * FROM states \
-                        WHERE name == '{}' \
-                        ORDER BY states.id ASC".format(state_name))
+        cursor.execute("""SELECT * FROM states \
+                        WHERE name = '{}' \
+                        ORDER BY states.id ASC""".format(state_name))
         results = cursor.fetchall()
         for row in results:
             print(row)
