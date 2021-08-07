@@ -30,14 +30,11 @@ if __name__ == "__main__":
 
     cursor.execute("SELECT VERSION()")
 
-    try:
-        cursor.execute("""SELECT * FROM states \
-                        WHERE states.name = '{}' \
-                        ORDER BY states.id ASC""".format(state_name))
-        results = cursor.fetchall()
-        for row in results:
-            print(row)
-    except:
-        print("Error: unable to fecth data")
+    cursor.execute("""SELECT * FROM states \
+                    WHERE states.name = '{}' \
+                    ORDER BY states.id ASC""".format(state_name))
+    results = cursor.fetchall()
+    for row in results:
+        print(row)
 
     db.close()
