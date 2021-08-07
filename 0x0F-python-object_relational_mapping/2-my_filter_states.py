@@ -16,7 +16,6 @@ if __name__ == "__main__":
     username = args_list[1]
     password = args_list[2]
     database_name = args_list[3]
-    state_name = args_list[4]
 
     db = MySQLdb.connect(
                         host="localhost",
@@ -32,9 +31,10 @@ if __name__ == "__main__":
 
     cursor.execute("""SELECT * FROM states \
                     WHERE states.name = '{}' \
-                    ORDER BY states.id ASC""".format(state_name))
+                    ORDER BY states.id ASC""".format(args_list[4]))
     results = cursor.fetchall()
     for row in results:
-        print(row)
+        if row[1] == args_list[4]:
+            print(row)
 
     db.close()
