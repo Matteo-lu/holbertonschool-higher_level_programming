@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     try:
         cursor.execute("SELECT * FROM states \
-                        WHERE name = '{}' \
+                        WHERE name LIKE '{}' \
                         ORDER BY states.id ASC".format(state_name))
         results = cursor.fetchall()
         for row in results:
