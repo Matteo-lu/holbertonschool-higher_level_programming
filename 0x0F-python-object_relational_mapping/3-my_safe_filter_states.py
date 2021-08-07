@@ -30,12 +30,10 @@ if __name__ == "__main__":
 
     cursor.execute("SELECT VERSION()")
 
-    sql = "SELECT * FROM states \
-            WHERE name like '%s' \
-            ORDER BY id ASC" % state_name
-
     try:
-        cursor.execute(sql)
+        cursor.execute("""SELECT * FROM states \
+                        WHERE name LIKE %s \
+                        ORDER BY id ASC""", (state_name,))
         results = cursor.fetchall()
         for row in results:
             print(row)
