@@ -33,7 +33,7 @@ if __name__ == "__main__":
     try:
         cursor.execute("SELECT * FROM states \
                         WHERE name = '{}' \
-                        ORDER BY id ASC".format(state_name))
+                        ORDER BY states.id ASC".format(state_name))
         results = cursor.fetchall()
         for row in results:
             print(row)
