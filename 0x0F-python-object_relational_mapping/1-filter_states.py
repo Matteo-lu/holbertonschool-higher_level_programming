@@ -29,7 +29,7 @@ if __name__ == "__main__":
     cursor.execute("SELECT VERSION()")
 
     sql = "SELECT * FROM states \
-            WHERE name like 'N%' \
+            WHERE name LIKE BINARY 'N%' \
             ORDER BY id ASC"
 
     try:
