@@ -25,3 +25,5 @@ if __name__ == "__main__":
             print("[{}] {}".format(json_response['id'], json_response['name']))
     except HTTPError as http_err:
         print("Not a valid JSON")
+    except Exception as err:
+        print("Not a valid JSON")
