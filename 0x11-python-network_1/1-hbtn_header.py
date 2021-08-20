@@ -8,9 +8,7 @@ import sys
 
 url = sys.argv[1]
 with urllib.request.urlopen(url) as response:
-    html = response.read()
-
-my_dict = response.headers.__dict__
-for element in my_dict['_headers']:
-    if element[0] == 'X-Request-Id':
-        print(element[1])
+    my_dict = response.headers.__dict__
+    for element in my_dict['_headers']:
+        if element[0] == 'X-Request-Id':
+            print(element[1])
