@@ -11,9 +11,9 @@ if __name__ == "__main__":
     url = 'http://0.0.0.0:5000/search_user'
 
     if(len(sys.argv) < 2):
-        data = {'q' : ""}
+        data = {'q': ""}
     else:
-        data = {'q' : sys.argv[1]}
+        data = {'q': sys.argv[1]}
 
     try:
         r = requests.post(url, data)
