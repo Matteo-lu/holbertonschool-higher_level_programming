@@ -17,6 +17,4 @@ data = data.encode('ascii')
 req = urllib.request.Request(url, data)
 
 with urllib.request.urlopen(req) as response:
-    html = response.read().decode('utf-8')
-
-print(html)
+    print(response.read().decode('utf-8'))
