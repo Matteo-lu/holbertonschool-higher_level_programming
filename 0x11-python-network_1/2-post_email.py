@@ -9,7 +9,7 @@ import sys
 url = sys.argv[1]
 email = sys.argv[2]
 
-values = {'email' : email}
+values = {'email': email}
 
 data = urllib.parse.urlencode(values)
 data = data.encode('ascii')
@@ -18,4 +18,4 @@ req = urllib.request.Request(url, data)
 with urllib.request.urlopen(url) as response:
     html = response.read()
 
-print (html)
+print(html)
