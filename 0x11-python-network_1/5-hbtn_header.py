@@ -9,5 +9,5 @@ if __name__ == "__main__":
 
     url = sys.argv[1]
 
-    r = requests.get('https://intranet.hbtn.io/status')
+    r = requests.get(url)
     print(r.headers['X-Request-Id'])
