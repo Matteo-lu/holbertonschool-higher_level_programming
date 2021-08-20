@@ -4,7 +4,8 @@ URL with the email as a parameter, and displays the body of the
 response (decoded in utf-8)"""
 
 
-import urllib
+import urllib.parse
+import urllib.request
 import sys
 
 url = sys.argv[1]
@@ -17,4 +18,5 @@ data = data.encode('ascii')
 req = urllib.request.Request(url, data)
 
 with urllib.request.urlopen(req) as response:
-    print(response.read().decode('utf-8'))
+    html = response.read().decode('utf-8')
+    print(html)
