@@ -7,7 +7,7 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    token = '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'
+    token = sys.argv[2]
     username = sys.argv[1]
     headers = {'Authorization': f'token {token}'}
     login = requests.get('https://api.github.com/user', headers=headers)
