@@ -110,5 +110,5 @@ id  name
 8   Thriller
 $
 </code></pre>
-<p><img alt="" src="https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/3/bc2575fee3303b731031.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210904%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210904T213513Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=0dadda571dbe866adf847ce6c79183a48419b034a19175e045fdadfa1e2ac5bc" style=""/></p>
-</div>actualization
+<p><img alt="" src="https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/3/bc2575fee3303b731031.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210904%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210904T213627Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=b31d0cc7ff6a582e92bb1827c4dd817eec1c37c9ef88b213bc2888ae39a99ff2" style=""/></p>
+</div>actualizations
