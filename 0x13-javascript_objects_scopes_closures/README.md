@@ -48,4 +48,4 @@ $ sudo apt-get install -y nodejs
 <p><a href="/rltoken/_6jQeRtew2qeam8OzERXPw" target="_blank" title="Documentation">Documentation</a></p>
 <pre><code>$ sudo npm install semistandard --global
 </code></pre>
-</div>actualization
+</div>actualizations
